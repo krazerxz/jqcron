@@ -1,0 +1,27 @@
+{
+  "name": "jqcron",
+  "version": "1.0.0",
+  "description": "Cron jQuery plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorcamarian/jqcron.git"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "cron"
+  ],
+  "dependencies" : {
+    "jquery": "3.2.1"
+  },
+  "author": {
+    "name": "Arnaud Buathier",
+    "email": "arnaud@arnapou.net",
+    "url": "http://arnapou.net/tech-js/jquery-jqcron/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sorcamarian/jqcron/issues"
+  },
+  "homepage": "https://github.com/sorcamarian/jqcron#readme"
+}
