@@ -7,6 +7,18 @@
  * file that was distributed with this source code.
  */
 
+
+
+ /*
+ TODO
+ -----
+ 1) Add possibility to set the language while using @import.
+ Currently the language is set by default at line: 870
+ 2) Replace window<Object> context with own context: jQuery.fn.jqCron?.context.
+ Instead of attaching Objects directly to the global window<Object>. Example: jqCronDefaultSettings, jqCron
+ */
+
+
 /**
  * Default settings
  */
