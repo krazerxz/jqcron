@@ -1,7 +1,7 @@
 {
   "name": "jqcron",
   "version": "1.0.0",
-  "description": "Cron jQuery plugin",
+  "description": "Cron jQuery plugin adjusted for Webpack context. Used in Angular 4 alongside jQuery 3.2.1.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sorcamarian/jqcron.git"
@@ -10,6 +10,8 @@
     "jquery",
     "plugin",
     "cron"
+    "webpack",
+    "angular"
   ],
   "dependencies" : {
     "jquery": "3.2.1"

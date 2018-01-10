@@ -10,7 +10,8 @@
 /**
  * Default settings
  */
-var jqCronDefaultSettings = {
+ // self is the global window<Object> in the webpack context
+ self.jqCronDefaultSettings = {
 	texts: {},
 	monthdays: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
 	hours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
@@ -65,10 +66,10 @@ var jqCronDefaultSettings = {
 		}
 		return dst;
 	};
-	this.jqCronMergeSettings = function(obj) {
+	self.jqCronMergeSettings = function(obj) {
 		return extend(extend({}, jqCronDefaultSettings), obj || {});
 	};
-}).call(this, jQuery);
+}).call(this, $);
 
 /**
  * Shortcut to get the instance of jqCron instance from one jquery object
@@ -77,7 +78,7 @@ var jqCronDefaultSettings = {
 	$.fn.jqCronGetInstance = function() {
 		return this.data('jqCron');
 	};
-}).call(this, jQuery);
+}).call(this, $);
 
 /**
  * Main plugin
@@ -142,7 +143,7 @@ var jqCronDefaultSettings = {
 			$(this).data('jqCron', cron);
 		});
 	};
-}).call(this, jQuery);
+}).call(this, $);
 
 /**
  * jqCron class
@@ -150,7 +151,7 @@ var jqCronDefaultSettings = {
 (function($){
 	var jqCronInstances = [];
 
-	function jqCron(settings) {
+  self.jqCron = function (settings) {
 		var _initialized  = false;
 		var _self         = this;
 		var _$elt         = this;
@@ -502,14 +503,14 @@ var jqCronDefaultSettings = {
 		} catch(e){}
 	}
 	this.jqCron = jqCron;
-}).call(this, jQuery);
+}).call(this, $);
 
 
 /**
  * jqCronSelector class
  */
 (function($){
-	function jqCronSelector(_cron, _$block, _multiple, _type){
+  self.jqCronSelector = function (_cron, _$block, _multiple, _type){
 		var _self      = this;
 		var _$list     = $('<ul class="jqCron-selector-list"></ul>');
 		var _$title    = $('<span class="jqCron-selector-title"></span>');
@@ -759,7 +760,7 @@ var jqCronDefaultSettings = {
 		_self.clear();
 	}
 	this.jqCronSelector = jqCronSelector;
-}).call(this, jQuery);
+}).call(this, $);
 
 /**
  * Generate unique id for each element.
@@ -782,7 +783,7 @@ var jqCronDefaultSettings = {
 			$(this).attr('id', id);
 		});
 	};
-}).call(this, jQuery);
+}).call(this, $);
 
 
 /**
@@ -851,4 +852,38 @@ var jqCronDefaultSettings = {
 			};
 		}
 	});
-}).call(this, jQuery);
+}).call(this, $);
+
+
+
+/**
+ * Set english language by default
+ * these settings are defined in: ./jqCron.en.js
+ */
+ self.jqCronDefaultSettings.texts.en = {
+ 		 	empty: 'every',
+ 		 	empty_minutes: 'every',
+ 		 	empty_time_hours: 'every hour',
+ 		 	empty_time_minutes: 'every minute',
+ 		 	empty_day_of_week: 'every day of the week',
+ 		 	empty_day_of_month: 'every day of the month',
+ 		 	empty_month: 'every month',
+ 		 	name_minute: 'minute',
+ 		 	name_hour: 'hour',
+ 		 	name_day: 'day',
+ 		 	name_week: 'week',
+ 		 	name_month: 'month',
+ 		 	name_year: 'year',
+ 		 	text_period: 'every <b />',
+ 		 	text_mins: ' at <b /> minute(s) past the hour',
+ 		 	text_time: ' at <b />:<b />',
+ 		 	text_dow: ' on <b />',
+ 		 	text_month: ' of <b />',
+ 		 	text_dom: ' on <b />',
+ 		 	error1: 'the tag %s is not supported !',
+ 		 	error2: 'bad number of elements',
+ 		 	error3: 'the jquery_element should be set into jqcron settings',
+ 		 	error4: 'unrecognized expression',
+ 		 	weekdays: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+ 		 	months: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+	 };
