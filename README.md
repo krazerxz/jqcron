@@ -1,5 +1,8 @@
-jqCron
+jqCron - Angular & Webpack 3 
 ======
+
+jqCron jQuery plugin adjusted for Webpack context. 
+Was successfully used in Angular 4 alongside Webpack 3 and jQuery 3.2.1.
 
 Cron jQuery plugin
 
